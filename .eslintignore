@@ -1,0 +1,5 @@
+/__tests__/
+/__mocks__/
+/build/
+/src/serviceWorker.ts
+/node_modules/
