@@ -1,20 +1,16 @@
 import { Box, Container, FormControlLabel, Radio } from '@material-ui/core';
-import { Field } from 'formik';
+import { Field, FormikValues } from 'formik';
 import { RadioGroup, TextField } from 'formik-material-ui';
 import React from 'react';
 import { object, string } from 'yup';
-import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 import { FormikStep } from '../../Atom/FormikStep/FormikStep';
 import { FormikWrapper } from '../../Molecules/FormikWrapper/FormikWrapper';
 import { PhoneInputField } from '../../Atom/PhoneInputField/PhoneInputField';
-import { addUser } from '../../../store/Actions/User';
 
-const sleep = (time: number) => new Promise((acc) => setTimeout(acc, time));
-
-export default function RegistrationForm() {
-  const dispatch = useDispatch();
-  const history = useHistory();
+interface RegistrationFormProps {
+  onSubmit(values: FormikValues): void;
+}
+export default function RegistrationForm({ onSubmit }: RegistrationFormProps) {
   return (
     <Container>
       <FormikWrapper
@@ -24,19 +20,7 @@ export default function RegistrationForm() {
           phoneNumber: '',
           salary: '',
         }}
-        onSubmit={async (values) => {
-          await sleep(1000);
-          const { firstName, lastName, phoneNumber, salary } = values;
-          dispatch(
-            addUser({
-              firstName,
-              lastName,
-              phoneNumber,
-              salary,
-            }),
-          );
-          history.push('/summary');
-        }}>
+        onSubmit={async (values) => onSubmit(values)}>
         <FormikStep
           label="Personal Info"
           validationSchema={object({
