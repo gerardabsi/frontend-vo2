@@ -3,9 +3,9 @@ import { Field } from 'formik';
 import { RadioGroup, TextField } from 'formik-material-ui';
 import React from 'react';
 import { object, string } from 'yup';
-import { FormikStep } from '../Atom/FormikStep/FormikStep';
-import { FormikWrapper } from '../Molecules/FormikWrapper/FormikWrapper';
-import { PhoneInputField } from '../Atom/PhoneInputField/PhoneInputField';
+import { FormikStep } from '../../Atom/FormikStep/FormikStep';
+import { FormikWrapper } from '../../Molecules/FormikWrapper/FormikWrapper';
+import { PhoneInputField } from '../../Atom/PhoneInputField/PhoneInputField';
 
 const sleep = (time: number) => new Promise((acc) => setTimeout(acc, time));
 

@@ -1,12 +1,14 @@
 import React from 'react';
-import './App.css';
-import RegistrationForm from './components/Organism/RegistrationForm';
+import { BrowserRouter } from 'react-router-dom';
+import { Routes } from './routes';
+
+import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <RegistrationForm />
-    </div>
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
   );
 }
 
