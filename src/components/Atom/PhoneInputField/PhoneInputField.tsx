@@ -39,10 +39,10 @@ export const PhoneInputField: React.FC<PhoneInputFieldProps> = ({
         country={country}
         enableSearch
         specialLabel="Phone Number"
-        inputStyle={{ width: '100%' }}
+        inputStyle={{ width: '100%', background: 'transparent' }}
         dropdownStyle={{ zIndex: 1000 }}
       />
-      <div className="Mui-error">{isError && getIn(errors, name)}</div>
+      <div style={{ color: '#f44336', fontSize: '0.75rem' }}>{isError && getIn(errors, name)}</div>
     </div>
   );
 };
