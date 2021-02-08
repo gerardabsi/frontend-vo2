@@ -1,7 +1,5 @@
 # Frontenv-VO2
 
-### Sonar Quality Check
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gerardabsi_movies_master2&metric=alert_status)](https://sonarcloud.io/dashboard?id=gerardabsi_movies_master2)
 ### Runing Project Locally
 - Install dependencies: run `npm install` in root project
 - Run project: `npm start`
@@ -40,6 +38,19 @@ Organisms are the combination of molecules that work together or even with atoms
 
 Pages are the navigate parts of the application and it’s where the components are distributed in one specific template. The components get real content and they’re connected with the whole application. At this stage, we can test the efficiency of the design system to analyse if all the components are independent enough or if we need to split them in smaller parts.
 
+## Folder Structure
+- components
+    - Atoms
+        - FormikStep: Form Step that display the step children
+        - PhoneInputField: Uses react-phone-input2 to create a phone component that extends the form data of formik to be able to handle the input change
+        - UserSummaryRow: Displays The info given
+    - Molecules
+        - FormikWrapper: Formik Wrapper that receive former steps children and devid them into steps
+    - Organism
+        - RegistrationForm
+- pages
+- routes
+- store
 
 ## Libraries
 
