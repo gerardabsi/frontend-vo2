@@ -1,5 +1,7 @@
 # Frontenv-VO2
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gerardabsi_frontend-vo2&metric=alert_status)](https://sonarcloud.io/dashboard?id=gerardabsi_frontend-vo2)
+
 ### Runing Project Locally
 - Install dependencies: run `npm install` in root project
 - Run project: `npm start`
