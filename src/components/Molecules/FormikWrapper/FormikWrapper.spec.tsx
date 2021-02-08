@@ -12,7 +12,7 @@ let firstStep: RenderResult;
 let thirdStep: RenderResult;
 describe('<FormikStep />', () => {
   const handleSubmit = jest.fn();
-  it('Has to add first name and lasty name then submit form', async () => {
+  it('Should submit the form personal details which is the first step', async () => {
     firstStep = render(
       <FormikWrapper
         initialValues={{

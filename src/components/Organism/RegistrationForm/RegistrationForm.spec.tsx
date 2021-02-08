@@ -16,7 +16,7 @@ describe('<FormikStep />', () => {
     );
   });
 
-  it('Has to add first name and last name then submit form', async () => {
+  it('Has to submit the form with given values', async () => {
     await fireEvent.click(documentBody.getByRole('button', { name: /Next/i }));
     await fireEvent.click(documentBody.getByRole('button', { name: /Next/i }));
     await fireEvent.click(documentBody.getByRole('button', { name: /Submit/i }));
