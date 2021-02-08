@@ -8,19 +8,21 @@ import { FormikWrapper } from '../../Molecules/FormikWrapper/FormikWrapper';
 import { PhoneInputField } from '../../Atom/PhoneInputField/PhoneInputField';
 
 interface RegistrationFormProps {
+  initialValues: any;
   onSubmit(values: FormikValues): void;
 }
-export default function RegistrationForm({ onSubmit }: RegistrationFormProps) {
+export default function RegistrationForm({
+  initialValues = {
+    firstName: '',
+    lastName: '',
+    phoneNumber: '',
+    salary: '',
+  },
+  onSubmit,
+}: RegistrationFormProps) {
   return (
     <Container>
-      <FormikWrapper
-        initialValues={{
-          firstName: '',
-          lastName: '',
-          phoneNumber: '',
-          salary: '',
-        }}
-        onSubmit={async (values) => onSubmit(values)}>
+      <FormikWrapper initialValues={initialValues} onSubmit={async (values) => onSubmit(values)}>
         <FormikStep
           label="Personal Info"
           validationSchema={object({
@@ -28,10 +30,10 @@ export default function RegistrationForm({ onSubmit }: RegistrationFormProps) {
             lastName: string().required('Please enter your last name'),
           })}>
           <Box paddingBottom={2} marginTop={5}>
-            <Field fullWidth name="firstName" component={TextField} label="First Name" />
+            <Field id="firstName" fullWidth name="firstName" type="text" component={TextField} label="First Name" />
           </Box>
           <Box paddingBottom={2}>
-            <Field fullWidth name="lastName" component={TextField} label="Last Name" />
+            <Field id="lastName" fullWidth name="lastName" component={TextField} label="Last Name" />
           </Box>
         </FormikStep>
         <FormikStep
@@ -40,7 +42,7 @@ export default function RegistrationForm({ onSubmit }: RegistrationFormProps) {
             phoneNumber: string().required('Please enter your phone number'),
           })}>
           <Box paddingBottom={2} marginTop={5}>
-            <Field name="phoneNumber" component={PhoneInputField} />
+            <Field id="phoneNumber" name="phoneNumber" component={PhoneInputField} label="Phone Number" />
           </Box>
         </FormikStep>
         <FormikStep
@@ -49,7 +51,7 @@ export default function RegistrationForm({ onSubmit }: RegistrationFormProps) {
             salary: string().required('Please select your salary range'),
           })}>
           <Box paddingBottom={2}>
-            <Field component={RadioGroup} name="salary">
+            <Field label="Salary" component={RadioGroup} name="salary">
               <FormControlLabel value="0 - 1.000" control={<Radio />} label="0 - 1.000" />
               <FormControlLabel value="1.000 - 2.000" control={<Radio />} label="1.000 - 2.000" />
               <FormControlLabel value="2.000 - 3.000" control={<Radio />} label="2.000 - 3.000" />
