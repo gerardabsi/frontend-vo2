@@ -1,46 +1,65 @@
-# Getting Started with Create React App
+# Frontenv-VO2
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Sonar Quality Check
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gerardabsi_movies_master2&metric=alert_status)](https://sonarcloud.io/dashboard?id=gerardabsi_movies_master2)
+### Runing Project Locally
+- Install dependencies: run `npm install` in root project
+- Run project: `npm start`
+- Run Tests: `npm run test`
 
-## Available Scripts
+## Structure Used
 
-In the project directory, you can run:
+<img width="100%" alt="atomic design" src="https://user-images.githubusercontent.com/4838076/33235048-d083dca6-d217-11e7-9aea-9a5ef5ae6fe7.png">
 
-### `npm start`
+### Atomic Design
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### What is Atomic Design?
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Popularly known within the design world, Atomic Design helps to build consistent, solid and reusable design systems. Plus, in the world of React, Vue and frameworks that stimulate the componentization, Atomic Design is used unconsciously; but when used in the right way, it becomes a powerful ally for developers.
 
-### `npm run build`
+The name Atomic Design comes from the idea of separating the components in atoms, molecules, organisms, templates and pages, like in the image above. But what are the responsibilities of each separated part?
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Atoms 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Atoms are the smallest possible components, such as buttons, titles, inputs or event color pallets, animations, and fonts. They can be applied on any context, globally or within other components and templates, besides having many states, such as this example of button: disabled, hover, different sizes, etc.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Molecules
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+They are the composition of one or more components of atoms. Here we begin to compose complex components and reuse some of those components. Molecules can have their own properties and create functionalities by using atoms, which don’t have any function or action by themselves.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Organisms
 
-## Learn More
+Organisms are the combination of molecules that work together or even with atoms that compose more elaborate interfaces. At this level, the components begin to have the final shape, but they are still ensured to be independent, portable and reusable enough to be reusable in any content.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Pages
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Pages are the navigate parts of the application and it’s where the components are distributed in one specific template. The components get real content and they’re connected with the whole application. At this stage, we can test the efficiency of the design system to analyse if all the components are independent enough or if we need to split them in smaller parts.
+
+
+## Libraries
+
+- Webpack
+  - CSS Loader
+  - SVG Sprite loader
+  - File loader 
+- Babel
+  - Loader
+  - Preset ES2015
+- Project
+  - Atomic Design styles folder structure
+  - ESLint
+  - Prettier
+  - Husky
+  - React router dom
+  - Redux
+  - Redux Thunk
+  - Redux Logger
+  - Material UI
+  - Formik
+  - Formik Material UI
+  
